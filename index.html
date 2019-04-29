@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <script>
+
+        function computerPlay() {
+            randNumber = Math.floor(Math.random() * 3)
+            if (randNumber === 0) {
+                return 'Rock';
+            } else if (randNumber == 1) {
+                return 'Paper'
+            } else {
+                return 'Scissors'
+            }
+        }
+
+        function game() {
+
+            /* Takes two values and returns win/lose/tie represented by int. */
+            function playRound(playerSelection, computerSelection) {
+
+                /* youWin will be three state int representing result */
+                /* 0 = win, 1 = lose, 2 = tie */
+                let youWin = 0;
+                playerSelection = capitalizeFirst(playerSelection)
+
+                if (playerSelection == computerSelection) {
+                    youWin = 2;
+                } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+                    youWin = 1;
+                } else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
+                    youWin = 1;
+                } else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+                    youWin = 1;
+                }
+
+                if (youWin === 0) {
+                    console.log('You Win! ' + playerSelection + ' beats ' + computerSelection);
+                    return youWin;
+                } else if (youWin == 1) {
+                    console.log('You Lose! ' + playerSelection + ' loses to ' + computerSelection);
+                    return youWin;
+                } else {
+                    console.log('You Tie! ' + playerSelection + ' ties ' + computerSelection);
+                    return youWin;
+                }
+            }
+
+            /* Array for the results of rounds. Indexes match return values in playRound subfunction */
+            let scores = [0, 0, 0]
+
+            /* Plays the game */
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = window.prompt('What is your selection? ["Rock","Paper","Scissors"]')
+                let computerSelection = computerPlay()
+                result = playRound(playerSelection, computerSelection)
+                scores[result]++
+            }
+
+            /* Returns string based on scores array */
+            if (scores[0] > scores[1]) {
+                return 'YOU WIN THE GAME! ' + scores[0] + ' round(s) to ' + scores[1] + ' round(s) with ' + scores[2] + ' tie(s).'
+            } else if (scores[0] < scores[1]) {
+                return 'YOU LOSE THE GAME! ' + scores[0] + ' round(s) to ' + scores[1] + ' round(s) with ' + scores[2] + ' tie(s).'
+            } else {
+                return 'YOU BOTH TIE! There were ' + scores[2] + ' ties and ' + scores[0] + ' wins apeice.'
+            }
+
+        }
+
+        function capitalizeFirst(str) {
+            str = str.toLowerCase();
+            str = str.charAt(0).toUpperCase() + str.slice(1);
+            return str;
+        }
+
+        console.log(game())
+
+    </script>
+</body>
+
+</html>
