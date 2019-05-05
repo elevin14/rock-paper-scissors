@@ -2,27 +2,10 @@
 <html>
 
 <head>
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>Page Title</title>
 </head>
 
 <body>
-
-    <div class="page">
-        <header class="tenpercentheight">
-            <h1>Make your choice</h1>
-        </header>
-        <div class="tenpercentheight">
-            asdf
-        </div>
-        <div class="buttons">
-            <div class=button id="btn">Rock</div>
-            <div class=button id="btn">Paper</div>
-            <div class=button id="btn">Scissors</div>
-        </div>
-        <footer class="tenpercentheight"></footer>
-    </div>
     <script>
 
         function computerPlay() {
@@ -72,14 +55,12 @@
             let scores = [0, 0, 0]
 
             /* Plays the game */
-            /*
             for (let i = 0; i < 5; i++) {
                 let playerSelection = window.prompt('What is your selection? ["Rock","Paper","Scissors"]')
                 let computerSelection = computerPlay()
                 result = playRound(playerSelection, computerSelection)
                 scores[result]++
             }
-            */
 
             /* Returns string based on scores array */
             if (scores[0] > scores[1]) {
@@ -89,6 +70,7 @@
             } else {
                 return 'YOU BOTH TIE! There were ' + scores[2] + ' ties and ' + scores[0] + ' wins apeice.'
             }
+
         }
 
         function capitalizeFirst(str) {
@@ -98,10 +80,6 @@
         }
 
         console.log(game())
-
-        window.addEventListener('click', (e) => {
-            console.log(e);
-        });
 
     </script>
 </body>
