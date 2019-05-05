@@ -12,7 +12,7 @@
     <div class="page">
         <header class="twentypercentheight">
             <h1>Make your choice</h1>
-            <div><em>First to 5 wins</em></div>
+            <div><em>First to 5 rounds wins the game</em></div>
         </header>
         <div class="fivepercentheight" id="score"></div>
         <div class="fivepercentheight" id="feedback">
@@ -22,7 +22,7 @@
             <div class=button id="Paper">Paper</div>
             <div class=button id="Scissors">Scissors</div>
         </div>
-        <footer class="twentypercentheight"></footer>
+        <footer class="fortypercentheight"></footer>
     </div>
     <script>
 
@@ -72,16 +72,19 @@
         function update_scores(x) {
             scores[x]++;
             const scoreText = document.querySelector('#score');
-            const feedbackText = document.querySelector('#feedback')
+            const div = document.querySelector('.page')
             if (scores[0] == 5) {
                 scoreText.textContent = 'YOU WIN THE GAME! You: '+ scores[0] + ' Computer: ' + scores[1] + ' Ties: ' + scores[2];
                 scores = [0,0,0];
+                div.setAttribute('style', 'background-color: #affbb2')
             } else if (scores[1] == 5){
                 scoreText.textContent = 'YOU LOSE THE GAME :( You: '+ scores[0] + ' Computer: ' + scores[1] + ' Ties: ' + scores[2];
                 scores = [0,0,0];
+                div.setAttribute('style', 'background-color: #ffadad')
             } 
             else {
                 scoreText.textContent = 'You: ' + scores[0] + ' Computer: ' + scores[1] + ' Ties: ' + scores[2];
+                div.setAttribute('style', 'background-color: white')
             }
         }
 

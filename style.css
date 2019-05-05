@@ -33,6 +33,7 @@
     text-align: center;
     background: rgba(0,0,0,0.15);
     cursor: pointer;
+    user-select: none;
 }
 
 .button:hover {
@@ -48,6 +49,11 @@
 .twentypercentheight {
     min-height: 20vh;
 }
+
+.fortypercentheight {
+    min-height: 38vh;
+}
+
 
 h1 {
     font-size: 2rem;
