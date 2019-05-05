@@ -13,8 +13,7 @@
         <header class="tenpercentheight">
             <h1>Make your choice</h1>
         </header>
-        <div class="tenpercentheight">
-            asdf
+        <div class="tenpercentheight" id="feedback">
         </div>
         <div class="buttons">
             <div class=button id="btn">Rock</div>
@@ -99,8 +98,11 @@
 
         console.log(game())
 
-        window.addEventListener('click', (e) => {
-            console.log(e);
+        const buttons = document.querySelectorAll('.button')
+        buttons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                console.log(e);
+            });
         });
 
     </script>
