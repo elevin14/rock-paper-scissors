@@ -1,26 +1,33 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 .page {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     text-align: center;
     font-family: sans-serif;
+    height: 100%;
 }
 
-.page > * {
-    flex: 1 100%;
+.page>* {
+    flex: 1;
 }
-
 
 .buttons {
     display: flex;
-    flex: 1;
+    flex: 1 100%;
     min-height: 30vh;
-    align-items: center;
+    max-height: 50vh;
+    align-items: flex-start;
     justify-content: center;
 }
 
 @media all and (max-width: 600px) {
     .buttons {
         flex-flow: column wrap;
+        align-items: center;
     }
 }
 
@@ -31,29 +38,29 @@
     padding: 1rem .5rem;
     width: 8rem;
     text-align: center;
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.15);
     cursor: pointer;
     user-select: none;
 }
 
 .button:hover {
     font-weight: bold;
-    background:  rgba(0,0,0,0.25);
+    background: rgba(0, 0, 0, 0.25);
     border: .30rem solid black;
 }
 
 .fivepercentheight {
-    min-height: 5vh;
+    max-height: 5vh;
 }
 
 .twentypercentheight {
-    min-height: 20vh;
+    max-height: 20vh;
 }
 
-.fortypercentheight {
-    min-height: 38vh;
+.footer {
+    width: 100%;
+    overflow: auto;
 }
-
 
 h1 {
     font-size: 2rem;
